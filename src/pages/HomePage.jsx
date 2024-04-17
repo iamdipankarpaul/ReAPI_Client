@@ -6,7 +6,7 @@ import useStore from "../store";
 function HomePage() {
   const { response } = useStore();
   return (
-    <Container size={"md"} mt={15}>
+    <Container size={"md"} mt={15} mb={10}>
       <Form />
       {response && <Response />}
     </Container>
