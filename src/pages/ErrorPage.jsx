@@ -15,6 +15,9 @@ function ErrorPage() {
         <Flex direction={"column"} gap={"sm"} align={"center"}>
           <Title>Uh oh! We've got a problem.</Title>
           <Text>{error.message || error.statusText}</Text>
+          <Text>
+            Please try again later or contact support if the problem persists.
+          </Text>
           <Button
             onClick={() => navigate("/")}
             rightSection={<IconArrowBackUp size={24} />}
