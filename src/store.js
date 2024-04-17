@@ -3,7 +3,7 @@ import { devtools, persist } from "zustand/middleware";
 
 const store = (set) => ({
   method: "GET",
-  url: "https://api.restful-api.dev/objects",
+  url: "https://api.restful-api.dev/objects/1",
   queryParams: [{ key: "", value: "" }],
   requestHeaders: [{ key: "", value: "" }],
   jsonRequestBody: "{\n\t\n}",
@@ -34,6 +34,15 @@ const store = (set) => ({
       queryParams: request.queryParams,
       requestHeaders: request.requestHeaders,
       jsonRequestBody: request.jsonRequestBody,
+    }),
+  initialLoad: () =>
+    set({
+      method: "GET",
+      url: "https://api.restful-api.dev/objects/1",
+      queryParams: [{ key: "", value: "" }],
+      requestHeaders: [{ key: "", value: "" }],
+      jsonRequestBody: "{\n\t\n}",
+      response: null,
     }),
 });
 

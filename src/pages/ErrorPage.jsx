@@ -2,7 +2,7 @@ import React from "react";
 
 import { useNavigate, useRouteError } from "react-router-dom";
 
-import { Center, Flex, Text, Title } from "@mantine/core";
+import { Button, Center, Flex, Text, Title } from "@mantine/core";
 import { IconArrowBackUp } from "@tabler/icons-react";
 
 function ErrorPage() {
@@ -16,7 +16,7 @@ function ErrorPage() {
           <Title>Uh oh! We've got a problem.</Title>
           <Text>{error.message || error.statusText}</Text>
           <Text>
-            Please try again later or contact support if the problem persists.
+            Please try again later.
           </Text>
           <Button
             onClick={() => navigate("/")}

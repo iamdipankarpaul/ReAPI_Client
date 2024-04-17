@@ -7,22 +7,23 @@ import {
   Tabs,
   Text,
   Title,
-  Table,
   Tooltip,
   ActionIcon,
 } from "@mantine/core";
 import { useFullscreen, useElementSize } from "@mantine/hooks";
+import { IconArrowsMaximize, IconArrowsMinimize } from "@tabler/icons-react";
 
 import useStore from "../store";
+import CodeSnippet from "./CodeSnippet";
+import ResponseHeader from "./ResponseHeader";
 import statusColors from "../utils/httpStatusColors";
 import { getResponseDetails } from "../utils/helpers";
-import { IconArrowsMaximize, IconArrowsMinimize } from "@tabler/icons-react";
 
 function Response() {
   const { response } = useStore();
 
   const { ref, toggle, fullscreen } = useFullscreen();
-  const { ref: responseRef, width, height: responseHeight } = useElementSize();
+  const { ref: responseRef, height: responseHeight } = useElementSize();
 
   const { size, status, time } = response
     ? getResponseDetails(response)
@@ -50,9 +51,9 @@ function Response() {
           ref={ref}
           defaultValue="Response"
           variant="outline"
+          radius="md"
           mah={"400px"}
-          radius={"md"}
-          my={10}
+          my={24}
           style={{
             overflowY: "auto",
             position: "relative",
@@ -70,6 +71,7 @@ function Response() {
             <Tabs.Tab value="Headers">Headers</Tabs.Tab>
           </Tabs.List>
 
+          {/* fullscreen button */}
           {responseHeight >= 400 && (
             <>
               <Tooltip label="Toggle fullscreen" position="top-end">
@@ -104,26 +106,12 @@ function Response() {
               value={JSON.stringify(response?.data, null, 2)}
             />
           </Tabs.Panel>
+
           <Tabs.Panel value="Headers">
-            <Table highlightOnHover withTableBorder>
-              <Table.Thead>
-                <Table.Tr>
-                  <Table.Th>Key</Table.Th>
-                  <Table.Th>Value</Table.Th>
-                </Table.Tr>
-              </Table.Thead>
-              <Table.Tbody>
-                {response?.headers &&
-                  Object.keys(response.headers).map((key, index) => (
-                    <Table.Tr key={index}>
-                      <Table.Td>{key}</Table.Td>
-                      <Table.Td>{response.headers[key]}</Table.Td>
-                    </Table.Tr>
-                  ))}
-              </Table.Tbody>
-            </Table>
+            <ResponseHeader />
           </Tabs.Panel>
         </Tabs>
+        <CodeSnippet />
       </Box>
     </>
   );

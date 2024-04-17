@@ -14,6 +14,7 @@ import { IconTrash, IconRepeat } from "@tabler/icons-react";
 
 import useStore from "../store";
 import fetchFromAPI from "../utils/fetchFromAPI";
+import { toKeyValuePairs, validJsonBody } from "../utils/helpers";
 
 function HistoryDrawer({ opened, close }) {
   const {
@@ -27,7 +28,15 @@ function HistoryDrawer({ opened, close }) {
   const handleRepeatRequest = async (request) => {
     setLoading(true);
     let time = new Date().getTime();
-    repeatRequestFromHistory(request);
+
+    const updatedReq = {
+      ...request,
+      queryParams: toKeyValuePairs(request.params),
+      requestHeaders: toKeyValuePairs(request.headers),
+      jsonRequestBody: validJsonBody(request.data),
+    };
+
+    repeatRequestFromHistory(updatedReq);
 
     try {
       const res = await fetchFromAPI(request);
@@ -48,12 +57,12 @@ function HistoryDrawer({ opened, close }) {
 
   const openDeleteModal = (requestId) =>
     modals.openConfirmModal({
-      title: "Delete this request?",
+      title: "Delete Request!!!",
       centered: true,
       size: "sm",
       radius: "md",
       children: (
-        <Text size="sm">Are you sure you want to delete this request?</Text>
+        <Text size="md">Are you sure you want to delete this request?</Text>
       ),
       labels: { confirm: "Delete", cancel: "Cancel" },
       confirmProps: { color: "red" },
@@ -95,7 +104,17 @@ function HistoryDrawer({ opened, close }) {
           </Tooltip>
         </Flex>
       </Flex>
-      <Text style={{ overflow: "hidden" }}>{item.url}</Text>
+      <Text
+        style={{
+          overflow: "hidden",
+          whiteSpace: "nowrap",
+          textOverflow: "ellipsis",
+          cursor: "default",
+        }}
+        title={item.url}
+      >
+        {item.url}
+      </Text>
       <Text size="sm" c="dimmed">
         {item.timestamp}
       </Text>
