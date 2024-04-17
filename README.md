@@ -22,11 +22,11 @@
 - **Real-time Response**: View responses in a structured and easy-to-read format.
 - **Full Screen**: View responses in a fullscreen format if response is big enough.
 - **Request History**: View a history of your sent requests.
-- **Manage History**: Manage a history of your sent requests, like delete and repeat request.
+- **Manage History**: Manage history of your sent requests, like delete and repeat request.
 
 ## Technologies Used
 
-- **ViteJs** : is a build tool that aims to provide a faster and leaner development experience.
+- **ViteJs** : A build tool that aims to provide a faster and leaner development experience.
 - **ReactJs** : JavaScript library for building user interfaces.
 - **Axios** : Promise-based HTTP client for making requests.
 - **Mantine** : For simple and clean UI components.
