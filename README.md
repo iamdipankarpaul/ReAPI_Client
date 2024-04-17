@@ -54,21 +54,6 @@ Open your browser and visit [http://localhost:5173](http://localhost:5173/) to u
 </div>
 
 <div align="center">
-	<img src="https://res.cloudinary.com/dysni0qfj/image/upload/v1713343023/ReAPI%20Client%20Project/ReAPI_Client_PUT_request.png" />
-	<p>PUT request</p>
-</div>
-
-<div align="center">
-	<img src="https://res.cloudinary.com/dysni0qfj/image/upload/v1713343023/ReAPI%20Client%20Project/ReAPI_Client_PATCH_request.png" />
-	<p>PATCH request</p>
-</div>
-
-<div align="center">
-	<img src="https://res.cloudinary.com/dysni0qfj/image/upload/v1713343023/ReAPI%20Client%20Project/ReAPI_Client_DELETE_request.png" />
-	<p>DELETE request</p>
-</div>
-
-<div align="center">
 	<img src="https://res.cloudinary.com/dysni0qfj/image/upload/v1713343024/ReAPI%20Client%20Project/ReAPI_Client_history.png" />
 	<p>Request history</p>
 </div>
