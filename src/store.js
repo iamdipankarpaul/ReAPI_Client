@@ -44,6 +44,7 @@ const store = (set) => ({
       jsonRequestBody: "{\n\t\n}",
       response: null,
     }),
+  clearHistory: () => set({ history: [] }),
 });
 
 const useStore = create(devtools(persist(store, { name: "reapi_history" })));

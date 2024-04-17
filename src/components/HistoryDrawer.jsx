@@ -1,28 +1,19 @@
-import {
-  ActionIcon,
-  Center,
-  Card,
-  Drawer,
-  Flex,
-  Text,
-  Title,
-  Tooltip,
-} from "@mantine/core";
+import { Center, Drawer, Text, Button, Box } from "@mantine/core";
 import { modals } from "@mantine/modals";
 
-import { IconTrash, IconRepeat } from "@tabler/icons-react";
-
 import useStore from "../store";
+import HistoryCard from "./HistoryCard";
 import fetchFromAPI from "../utils/fetchFromAPI";
 import { toKeyValuePairs, validJsonBody } from "../utils/helpers";
 
 function HistoryDrawer({ opened, close }) {
   const {
     history,
+    setLoading,
+    setResponse,
+    clearHistory,
     deleteFromHistory,
     repeatRequestFromHistory,
-    setResponse,
-    setLoading,
   } = useStore();
 
   const handleRepeatRequest = async (request) => {
@@ -66,66 +57,50 @@ function HistoryDrawer({ opened, close }) {
       ),
       labels: { confirm: "Delete", cancel: "Cancel" },
       confirmProps: { color: "red" },
-      onCancel: () => console.log("Cancel"),
+      onCancel: () => console.log("Cancel Delete Request."),
       onConfirm: () => deleteFromHistory(requestId),
     });
 
-  const content = history?.toReversed().map((item) => (
-    <Card
-      key={item.requestId}
-      shadow="sm"
-      mb={"sm"}
-      padding="sm"
-      radius="md"
-      withBorder
-    >
-      <Flex direction={"row"} align={"center"} justify={"space-between"}>
-        <Title order={6}>{item.method}</Title>
-        <Flex gap={"sm"}>
-          <Tooltip label="Remove request" position="top-end">
-            <ActionIcon
-              size={28}
-              variant="default"
-              aria-label="Delete from history"
-              onClick={() => openDeleteModal(item.requestId)}
-            >
-              <IconTrash size={"14px"} />
-            </ActionIcon>
-          </Tooltip>
-          <Tooltip label="Repeat request" position="top-end">
-            <ActionIcon
-              size={28}
-              variant="default"
-              aria-label="Repeat request"
-              onClick={() => handleRepeatRequest(item)}
-            >
-              <IconRepeat size={"14px"} />
-            </ActionIcon>
-          </Tooltip>
-        </Flex>
-      </Flex>
-      <Text
-        style={{
-          overflow: "hidden",
-          whiteSpace: "nowrap",
-          textOverflow: "ellipsis",
-          cursor: "default",
-        }}
-        title={item.url}
-      >
-        {item.url}
-      </Text>
-      <Text size="sm" c="dimmed">
-        {item.timestamp}
-      </Text>
-    </Card>
-  ));
+  const clearHistoryModal = () =>
+    modals.openConfirmModal({
+      title: "Clear Request!!!",
+      centered: true,
+      size: "sm",
+      radius: "md",
+      children: (
+        <Text size="md">
+          Are you sure you want to clear your history? Your data will be
+          permanently lost.
+        </Text>
+      ),
+      labels: { confirm: "Clear", cancel: "Cancel" },
+      confirmProps: { color: "red" },
+      onCancel: () => console.log("Cancel Clear History."),
+      onConfirm: () => clearHistory(),
+    });
 
   return (
     <>
       <Drawer opened={opened} onClose={close} title="History">
         {history?.length > 0 ? (
-          <>{content}</>
+          <>
+            <HistoryCard
+              openDeleteModal={openDeleteModal}
+              handleRepeatRequest={handleRepeatRequest}
+            />
+            <Box
+              py={16}
+              style={{
+                position: "sticky",
+                bottom: 0,
+                backgroundColor: "var(--mantine-color-body)",
+              }}
+            >
+              <Button fullWidth onClick={clearHistoryModal}>
+                Clear History
+              </Button>
+            </Box>
+          </>
         ) : (
           <>
             <Center>
