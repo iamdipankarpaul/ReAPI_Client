@@ -8,10 +8,10 @@ export default async function fetchFromAPI(requestObj) {
     result = await axios(requestObj);
     const endTime = performance.now();
     result.responseTime = endTime - startTime;
-    result.axiosCodeSnippet = generateAxiosCode(requestObj);
-    result.fetchCodeSnippet = generateFetchCode(requestObj);
-    // console.log(result.axiosCodeSnippet);
-    // console.log(result.fetchCodeSnippet);
+    result.axiosCode = generateAxiosCode(requestObj);
+    result.fetchCode = generateFetchCode(requestObj);
+    console.log(result.axiosCode);
+    console.log(result.fetchCode);
   } catch (error) {
     console.log(error.message);
     throw error;

@@ -21,12 +21,12 @@ function CodeSnippet() {
           code={[
             {
               fileName: "Axios Code",
-              code: response.axiosCodeSnippet,
+              code: response?.axiosCode,
               language: "js",
             },
             {
               fileName: "Fetch Code",
-              code: response.fetchCodeSnippet,
+              code: response?.fetchCode,
               language: "js",
             },
           ]}
