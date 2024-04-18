@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Box, Tabs, Title } from "@mantine/core";
-import { CodeHighlight, CodeHighlightTabs } from "@mantine/code-highlight";
+import { CodeHighlightTabs } from "@mantine/code-highlight";
 
 import useStore from "../store";
 
@@ -16,8 +16,8 @@ function CodeSnippet() {
         <CodeHighlightTabs
           withExpandButton
           defaultExpanded={false}
-          expandCodeLabel="Show full code"
-          collapseCodeLabel="Show less"
+          expandCodeLabel="See full code"
+          collapseCodeLabel="See less"
           code={[
             {
               fileName: "Axios Code",
