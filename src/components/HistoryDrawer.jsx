@@ -1,4 +1,4 @@
-import { Center, Drawer, Text, Button, Box } from "@mantine/core";
+import { Center, Drawer, Text, Button, Box, ScrollArea } from "@mantine/core";
 import { modals } from "@mantine/modals";
 
 import useStore from "../store";
@@ -96,7 +96,7 @@ function HistoryDrawer({ opened, close }) {
                 backgroundColor: "var(--mantine-color-body)",
               }}
             >
-              <Button fullWidth onClick={clearHistoryModal}>
+              <Button radius={"md"} fullWidth onClick={clearHistoryModal}>
                 Clear History
               </Button>
             </Box>

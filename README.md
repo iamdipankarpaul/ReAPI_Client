@@ -2,7 +2,7 @@
 	<a href="https://re-api-seven.vercel.app/">ReAPI</a>
 </h1>
 
-<h5 align="center">A simple Postman clone, a popular API testing tool, built using React. This project aims to provide a user-friendly interface for making API requests and visualizing responses.</h5>
+<h5 align="center">A simple Postman alternative, a popular API testing tool, built using React. This project aims to provide a user-friendly interface for making API requests and visualizing responses.</h5>
 
 <p align="center">
 	<a href="https://re-api-seven.vercel.app/">Live demo</a>
