@@ -64,7 +64,7 @@ function Response() {
               style={{
                 position: "sticky",
                 top: 0,
-                zIndex: 3,
+                zIndex: 4,
                 backgroundColor: "var(--mantine-color-body)",
               }}
             >
