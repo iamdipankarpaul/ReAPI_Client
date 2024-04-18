@@ -81,7 +81,8 @@ function HistoryDrawer({ opened, close }) {
 
   return (
     <>
-      <Drawer opened={opened} onClose={close} title="History">
+      <Drawer opened={opened} onClose={close} title="History"
+      scrollAreaComponent={ScrollArea.Autosize}>
         {history?.length > 0 ? (
           <>
             <HistoryCard
