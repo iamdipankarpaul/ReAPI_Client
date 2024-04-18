@@ -9,7 +9,6 @@ import {
   Title,
   Tooltip,
   ActionIcon,
-  ScrollArea,
 } from "@mantine/core";
 import { useFullscreen, useElementSize } from "@mantine/hooks";
 import { IconArrowsMaximize, IconArrowsMinimize } from "@tabler/icons-react";
@@ -34,8 +33,6 @@ function Response() {
         time: "",
       };
 
-  const scrollAreaHeight = fullscreen ? "calc(100vh - 35px)" : "400px";
-
   return (
     <>
       <Box my={10} mx={"auto"}>
@@ -56,7 +53,7 @@ function Response() {
             defaultValue="Response"
             variant="outline"
             radius="md"
-            mah={"450px"}
+            mah={"400px"}
             my={24}
             style={{
               overflowY: "hidden",
@@ -101,15 +98,13 @@ function Response() {
             )}
 
             <Tabs.Panel value="Response" ref={responseRef}>
-              <ScrollArea h={scrollAreaHeight}>
-                <JsonInput
-                  aria-label="Response json body..."
-                  minRows={5}
-                  autosize
-                  readOnly
-                  value={JSON.stringify(response?.data, null, 2)}
-                />
-              </ScrollArea>
+              <JsonInput
+                aria-label="Response json body..."
+                minRows={5}
+                autosize
+                readOnly
+                value={JSON.stringify(response?.data, null, 2)}
+              />
             </Tabs.Panel>
 
             <Tabs.Panel value="Headers">
