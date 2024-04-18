@@ -1,11 +1,11 @@
 <h1 align="center">
-	<a href="https://re-api-seven.vercel.app/">ReAPI</a>
+	<a href="https://reapi-client.vercel.app/">ReAPI Client</a>
 </h1>
 
 <h5 align="center">A simple Postman alternative, a popular API testing tool, built using React. This project aims to provide a user-friendly interface for making API requests and visualizing responses.</h5>
 
 <p align="center">
-	<a href="https://re-api-seven.vercel.app/">Live demo</a>
+	<a href="https://reapi-client.vercel.app/">Live demo</a>
 	•
 	<a href="https://github.com/dipankarpaul2k/ReAPI_Client/archive/refs/heads/main.zip">Download</a>
 </p>
@@ -54,7 +54,12 @@ Open your browser and visit [http://localhost:5173](http://localhost:5173/) to u
 </div>
 
 <div align="center">
-	<img src="https://res.cloudinary.com/dysni0qfj/image/upload/v1713343024/ReAPI%20Client%20Project/ReAPI_Client_history.png" />
+	<img src="https://res.cloudinary.com/dysni0qfj/image/upload/v1713428699/ReAPI%20Client%20Project/ReAPI_Client_history.png" />
 	<p>Request history</p>
+</div>
+
+<div align="center">
+	<img src="https://res.cloudinary.com/dysni0qfj/image/upload/v1713428699/ReAPI%20Client%20Project/ReAPI_Client_code_snippet.png" />
+	<p>Code Snippet</p>
 </div>
 
