@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 
 import {
   Box,
@@ -56,7 +56,7 @@ function Response() {
             mah={"400px"}
             my={24}
             style={{
-              overflowY: "hidden",
+              overflowY: "auto",
               position: "relative",
             }}
           >
