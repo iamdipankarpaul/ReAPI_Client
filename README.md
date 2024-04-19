@@ -12,7 +12,6 @@
 
 <div align="center">
 	<img src="https://res.cloudinary.com/dysni0qfj/image/upload/v1713343023/ReAPI%20Client%20Project/ReAPI_Client_GET_request.png" />
-	<p>GET request</p>
 </div>
 
 ## Features
@@ -52,16 +51,13 @@ Open your browser and visit [http://localhost:5173](http://localhost:5173/) to u
 
 <div align="center">
 	<img src="https://res.cloudinary.com/dysni0qfj/image/upload/v1713343022/ReAPI%20Client%20Project/ReAPI_Client_POST_request.png" />
-	<p>POST request</p>
 </div>
 
 <div align="center">
 	<img src="https://res.cloudinary.com/dysni0qfj/image/upload/v1713428699/ReAPI%20Client%20Project/ReAPI_Client_history.png" />
-	<p>Request history</p>
 </div>
 
 <div align="center">
 	<img src="https://res.cloudinary.com/dysni0qfj/image/upload/v1713428699/ReAPI%20Client%20Project/ReAPI_Client_code_snippet.png" />
-	<p>Code Snippet</p>
 </div>
 
