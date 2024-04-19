@@ -64,6 +64,7 @@ function Navbar() {
             <Button
               variant="outline"
               size="xs"
+              radius={"md"}
               onClick={open}
               rightSection={<IconHistory size={22} />}
             >
