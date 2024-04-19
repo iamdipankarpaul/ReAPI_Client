@@ -127,7 +127,7 @@ function Form() {
         </Button>
       </Flex>
 
-      <Tabs defaultValue="Params" my={20} variant="outline">
+      <Tabs defaultValue="Params" my={20} variant="outline" radius={"md"}>
         <Tabs.List>
           <Tabs.Tab value="Params">Params</Tabs.Tab>
           <Tabs.Tab value="Headers">Headers</Tabs.Tab>

@@ -97,7 +97,7 @@ function HistoryDrawer({ opened, close }) {
                 backgroundColor: "var(--mantine-color-body)",
               }}
             >
-              <Button radius={"md"} fullWidth onClick={clearHistoryModal}>
+              <Button radius={"md"} size="md" fullWidth onClick={clearHistoryModal}>
                 Clear History
               </Button>
             </Box>
