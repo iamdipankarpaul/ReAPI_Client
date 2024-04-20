@@ -19,7 +19,7 @@ function Footer() {
           style={{ textWrap: "balance", textAlign: "center" }}
         >
           <Text fz={{ base: "h5", sm: "h4" }}>
-            Made by Dipankar with ReactJs, Mantine and Zustand.
+            Made by Dipankar Paul with ReactJs.
           </Text>
           <Text fz={{ base: "h6", sm: "h5" }}>
             My other projects are
