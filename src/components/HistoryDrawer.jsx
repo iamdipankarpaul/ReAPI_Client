@@ -17,6 +17,7 @@ function HistoryDrawer({ opened, close }) {
   } = useStore();
 
   const handleRepeatRequest = async (request) => {
+    close(); // close the drawer
     setLoading(true);
     let time = new Date().getTime();
 
@@ -42,7 +43,6 @@ function HistoryDrawer({ opened, close }) {
       console.log(error);
     } finally {
       setLoading(false);
-      close();
     }
   };
 
