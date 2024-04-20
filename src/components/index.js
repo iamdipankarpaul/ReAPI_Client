@@ -7,3 +7,5 @@ export { default as HistoryDrawer } from "./HistoryDrawer";
 export { default as CodeSnippet } from "./CodeSnippet";
 export { default as ResponseHeader } from "./ResponseHeader";
 export { default as HistoryCard } from "./HistoryCard";
+export { default as Footer } from "./layouts/Footer";
+export { default as SocialIcon } from "./layouts/SocialIcon";

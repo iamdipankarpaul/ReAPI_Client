@@ -3,17 +3,19 @@ import React from "react";
 import {
   ActionIcon,
   Flex,
-  Title,
   useComputedColorScheme,
   useMantineColorScheme,
   Tooltip,
   Button,
   em,
+  Text,
+  Group,
 } from "@mantine/core";
 import { useDisclosure, useMediaQuery } from "@mantine/hooks";
 
 import { IconBulb, IconBulbOff, IconHistory } from "@tabler/icons-react";
 import HistoryDrawer from "../HistoryDrawer";
+import { Code } from "@phosphor-icons/react";
 
 function Navbar() {
   const { setColorScheme } = useMantineColorScheme();
@@ -26,10 +28,13 @@ function Navbar() {
 
   return (
     <>
-      <Flex align={"center"} h={"8vh"} p={"10px"} justify={"space-between"}>
-        <Title order={3} fw={700} c={"#1C7ED6"}>
-          ReAPI Client
-        </Title>
+      <Flex align="center" h="8.5vh" p="10px" justify="space-between" >
+        <Group gap="xs" align="center">
+          <Code size={32} weight="fill" color="#2782d5" />
+          <Text fz={{base: "h4", sm: "h3"}} fw="700">
+            ReAPI Client
+          </Text>
+        </Group>
         <Flex align={"center"} gap={"10px"}>
           <Tooltip label="Toggle theme" position="bottom-end">
             <ActionIcon
@@ -40,7 +45,7 @@ function Navbar() {
                   computedColorScheme === "light" ? "dark" : "light"
                 )
               }
-              radius={"lg"}
+              radius="lg"
             >
               {computedColorScheme === "dark" ? (
                 <IconBulb size={"22px"} />

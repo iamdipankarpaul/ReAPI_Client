@@ -10,8 +10,6 @@ export default async function fetchFromAPI(requestObj) {
     result.responseTime = endTime - startTime;
     result.axiosCode = generateAxiosCode(requestObj);
     result.fetchCode = generateFetchCode(requestObj);
-    console.log(result.axiosCode);
-    console.log(result.fetchCode);
   } catch (error) {
     console.log(error.message);
     throw error;

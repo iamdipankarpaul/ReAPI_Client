@@ -11,6 +11,7 @@ import {
   Flex,
   Loader,
 } from "@mantine/core";
+import { useEventListener } from "@mantine/hooks";
 
 import { IconSend } from "@tabler/icons-react";
 
@@ -38,8 +39,7 @@ function Form() {
     saveToHistory,
   } = useStore();
 
-  async function handleSubmit(e) {
-    e.preventDefault();
+  async function handleSubmit() {
     setLoading(true);
 
     let data;
@@ -82,6 +82,13 @@ function Form() {
     }
   }
 
+  // Enter key press event handler
+  const urlInputRef = useEventListener("keypress", (event) => {
+    if (event.key === "Enter") {
+      handleSubmit();
+    }
+  });
+
   return (
     <Box mx={"auto"} mb={10}>
       <Flex
@@ -109,6 +116,7 @@ function Form() {
           onChange={(e) => setUrl(e.target.value)}
           size="md"
           radius="md"
+          ref={urlInputRef}
         />
         <Button
           variant="filled"
