@@ -29,6 +29,7 @@ function Footer() {
               underline="hover"
               mx="3px"
               c="var(--text-color)"
+              fz={{ base: "h6", sm: "h5" }}
             >
               ReTube,
             </Anchor>
@@ -38,6 +39,7 @@ function Footer() {
               underline="hover"
               mx="3px"
               c="var(--text-color)"
+              fz={{ base: "h6", sm: "h5" }}
             >
               HomeBudget,
             </Anchor>
@@ -47,6 +49,7 @@ function Footer() {
               underline="hover"
               mx="3px"
               c="var(--text-color)"
+              fz={{ base: "h6", sm: "h5" }}
             >
               Taskade.
             </Anchor>
