@@ -15,7 +15,7 @@ function CodeSnippet() {
             Code Snippet
           </Title>
           <Box my={24} mx={"auto"}>
-            <Tabs defaultValue="fetch" variant="outline" radius="md">
+            {/* <Tabs defaultValue="fetch" variant="outline" radius="md">
               <Tabs.List>
                 <Tabs.Tab value="fetch">Fetch Code</Tabs.Tab>
                 <Tabs.Tab value="axios">Axios Code</Tabs.Tab>
@@ -27,8 +27,12 @@ function CodeSnippet() {
               <Tabs.Panel value="axios">
                 <CodeHighlight code={response.axiosCode} language="js" />
               </Tabs.Panel>
-            </Tabs>
-            {/* <CodeHighlightTabs
+            </Tabs> */}
+            <CodeHighlightTabs
+              withExpandButton
+              defaultExpanded={false}
+              expandCodeLabel="Show full code"
+              collapseCodeLabel="Show less"
               code={[
                 {
                   fileName: "Fetch code",
@@ -41,7 +45,7 @@ function CodeSnippet() {
                   language: "js",
                 },
               ]}
-            /> */}
+            />
           </Box>
         </Box>
       )}
