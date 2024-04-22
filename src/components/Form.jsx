@@ -49,7 +49,7 @@ function Form() {
       alert("Something is wrong with the JSON data.");
     }
 
-    let time = new Date().getTime();
+    const startTime = performance.now();
 
     const request = {
       url: url.trim(),
@@ -70,13 +70,12 @@ function Form() {
         }),
       });
     } catch (error) {
-      time = new Date().getTime() - time;
+      const endTime = performance.now();
       setResponse({
-        status: 404,
-        responseTime: time,
-        data: error.response.data,
+        status: error.response.status,
+        responseTime: endTime - startTime,
+        data: error.message,
       });
-      console.log(error);
     } finally {
       setLoading(false);
     }
