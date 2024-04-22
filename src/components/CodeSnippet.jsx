@@ -22,10 +22,10 @@ function CodeSnippet() {
               </Tabs.List>
 
               <Tabs.Panel value="fetch">
-                <CodeHighlight code={response?.fetchCode} language="js" />
+                <CodeHighlight code={response.fetchCode} language="js" />
               </Tabs.Panel>
               <Tabs.Panel value="axios">
-                <CodeHighlight code={response?.axiosCode} language="js" />
+                <CodeHighlight code={response.axiosCode} language="js" />
               </Tabs.Panel>
             </Tabs>
             {/* <CodeHighlightTabs
