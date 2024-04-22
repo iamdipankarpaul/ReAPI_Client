@@ -8,7 +8,6 @@ function HomePage() {
 
   useEffect(() => {
     initialLoad();
-    // setLoading(false);
   }, []);
 
   return (

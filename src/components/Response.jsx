@@ -10,6 +10,7 @@ import {
   Tooltip,
   ActionIcon,
   ScrollArea,
+  LoadingOverlay
 } from "@mantine/core";
 import { useFullscreen, useElementSize } from "@mantine/hooks";
 import { IconArrowsMaximize, IconArrowsMinimize } from "@tabler/icons-react";
@@ -21,7 +22,7 @@ import statusColors from "../utils/httpStatusColors";
 import { getResponseDetails } from "../utils/helpers";
 
 function Response() {
-  const { response } = useStore();
+  const { response, loading } = useStore();
 
   const { ref, toggle, fullscreen } = useFullscreen();
   const { ref: responseRef, height: responseHeight } = useElementSize();
@@ -38,7 +39,8 @@ function Response() {
 
   return (
     <>
-      <Box my={10} mx={"auto"}>
+      <Box my={10} mx={"auto"} pos="relative">
+      <LoadingOverlay visible={loading} zIndex={10} overlayProps={{ radius: "sm", blur: 2 }} />
         <Box>
           <Group align="center" justify="space-between" my={5} px={8}>
             <Title order={3} fw={700}>
